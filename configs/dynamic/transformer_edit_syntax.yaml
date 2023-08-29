@@ -1,0 +1,51 @@
+exp_name: 'NCT_edit'
+gpu_id: [0]
+logger:
+    display_id: 9908
+model:
+    transformer_encoder:
+        input_dim: 2048
+        feat_dim: 1024
+        emb_dim: 512
+        att_dim: 512
+        att_head: 8
+        att_layer: 1
+        dim: 128
+    transformer_decoder:
+        input_dim: 2048
+        word_dim: 300
+        att_dim: 512
+        att_head: 8
+        att_layer: 2
+        vocab_size: 2459
+        seq_length: 60
+        share_wd_cls_weight: False
+        label_smoothing: 0.0
+#    speaker:
+#        embed_input_dim: 3078
+#        embed_dim: 512
+#        input_dim: 1024 + 2
+#        vocab_size: 76
+#        seq_length: 23
+
+data:
+    dataset: 'rcc_dataset_transformer_with_dep_edit'
+    default_feature_dir: "./edit_data/features"
+    semantic_feature_dir: "./edit_data/sc_features"
+    default_img_dir: "./edit_data/img0"
+    semantic_img_dir: "./edit_data/img1"
+    splits_json: "./edit_data/splits.json"
+    vocab_json: "./edit_data/transformer_vocab.json"
+    dep_vocab_json: './edit_data/transformer_dep_vocab.json'
+    h5_label_file: "./edit_data/transformer_labels.h5"
+    train:
+        batch_size: 32
+train:
+    max_iter: 10000
+    snapshot_interval: 1000
+    grad_clip: -1.0
+    optim:
+        type: 'adam'
+        lr: 0.0002
+        weight_decay: 0.0
+
