@@ -11,7 +11,7 @@ Tu, Yunbin, et al. ["Neighborhood Contrastive Transformer for Change Captioning.
 1. Make virtual environment with Python 3.8 
 2. Install requirements (`pip install -r requirements.txt`)
 3. Setup COCO caption eval tools ([github](https://github.com/mtanti/coco-caption)) 
-4. An 3090 GPU or others.
+4. An NVIDA 3090 GPU or others.
 
 ## Data
 1. Download data from here: [google drive link](https://drive.google.com/file/d/1HJ3gWjaUJykEckyb2M0MB4HnrJSihjVe/view?usp=sharing)
